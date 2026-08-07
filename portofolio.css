@@ -1,0 +1,629 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#05070d;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+/* Canvas Matrix */
+
+#matrix{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
+}
+
+/* Background Blur */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:#00ff99;
+    filter:blur(180px);
+    opacity:.15;
+    border-radius:50%;
+    top:-200px;
+    left:-200px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#0088ff;
+    filter:blur(180px);
+    opacity:.10;
+    border-radius:50%;
+    bottom:-120px;
+    right:-120px;
+    z-index:-1;
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:25px 10%;
+    position:sticky;
+    top:0;
+
+    backdrop-filter:blur(12px);
+
+    background:rgba(255,255,255,.05);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:999;
+}
+
+.logo h2{
+
+    color:#00ff99;
+    letter-spacing:1px;
+}
+
+nav{
+
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+    position:relative;
+}
+
+nav a:hover{
+
+    color:#00ff99;
+}
+
+nav a::after{
+
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+
+    width:0;
+    height:2px;
+
+    background:#00ff99;
+    transition:.3s;
+}
+
+nav a:hover::after{
+
+    width:100%;
+}
+
+/* ===========================
+HERO
+=========================== */
+
+.hero{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:60px;
+
+    min-height:100vh;
+
+    padding:80px 10%;
+}
+
+.hero-kiri{
+
+    flex:1;
+}
+
+.hero-kanan{
+
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+}
+
+/* Welcome */
+
+.welcome{
+
+    display:inline-block;
+
+    background:#00ff99;
+
+    color:#111;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+    animation:float 2s ease infinite;
+}
+
+.hero h1{
+
+    font-size:58px;
+
+    line-height:1.2;
+
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+
+    color:#00ff99;
+}
+
+.hero h3{
+
+    color:#cfcfcf;
+
+    margin-bottom:25px;
+
+    font-weight:500;
+}
+
+.hero p{
+
+    color:#bdbdbd;
+
+    line-height:1.8;
+
+    max-width:600px;
+}
+
+/* Tombol */
+
+.button{
+
+    margin-top:35px;
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    background:#00ff99;
+
+    color:#111;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:.4s;
+}
+
+.btn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 0 30px #00ff99;
+
+}
+
+/* ===========================
+CARD
+=========================== */
+
+.profile-img{
+    width:170px;
+    height:170px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#00ff99;
+
+    padding:5px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    box-shadow:0 0 30px rgba(0,255,153,.5);
+
+    transition:.5s;
+}
+
+.profile-img img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    transition:.5s;
+}
+
+.profile-img:hover{
+
+    transform:scale(1.08) rotate(5deg);
+
+    box-shadow:0 0 50px #00ff99;
+}
+
+.profile-img:hover img{
+
+    transform:scale(1.1);
+}
+
+.profile-card{
+
+    width:340px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.5s;
+}
+
+.profile-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 40px rgba(0,255,153,.4);
+}
+
+.profile-img{
+
+    width:120px;
+    height:120px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#00ff99;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:50px;
+
+    color:#111;
+
+    margin-bottom:25px;
+}
+
+/* ===========================
+SECTION
+=========================== */
+
+section{
+
+    padding:100px 10%;
+}
+
+section h2{
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin-bottom:30px;
+
+    color:#00ff99;
+}
+
+.tentang p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    line-height:2;
+
+    text-align:center;
+
+    color:#d5d5d5;
+}
+
+/* ===========================
+SOSMED
+=========================== */
+
+.social-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+}
+
+.social{
+
+    width:220px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.4s;
+}
+
+.social i{
+
+    font-size:24px;
+}
+
+.social:hover{
+
+    transform:translateY(-10px) scale(1.05);
+
+    box-shadow:0 0 25px rgba(0,255,153,.5);
+}
+
+.instagram:hover{
+
+    background:#E1306C;
+}
+
+.facebook:hover{
+
+    background:#1877F2;
+}
+
+.linkedin:hover{
+
+    background:#0A66C2;
+}
+
+.twitter:hover{
+
+    background:#111;
+}
+
+.youtube:hover{
+
+    background:#FF0000;
+}
+
+/* ===========================
+FLEXBOX
+=========================== */
+
+.flex-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+    margin-top:50px;
+}
+
+.box{
+
+    flex:1 1 230px;
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    transition:.4s;
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.box:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 0 30px rgba(0,255,153,.3);
+}
+
+.box h3{
+
+    color:#00ff99;
+
+    margin-bottom:15px;
+}
+
+.box p{
+
+    color:#cfcfcf;
+
+    line-height:1.8;
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+footer{
+
+    padding:30px;
+
+    text-align:center;
+
+    background:#000;
+
+    color:#999;
+
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* ===========================
+ANIMASI
+=========================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+    }
+
+    100%{
+
+        transform:translateY(0px);
+    }
+}
+
+/* Fade */
+
+.hero-kiri,
+.hero-kanan,
+.tentang,
+.sosial,
+.flexbox{
+
+    animation:fade 1.2s ease;
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+header{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.hero{
+
+flex-direction:column-reverse;
+
+text-align:center;
+
+}
+
+.hero p{
+
+margin:auto;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.profile-card{
+
+width:100%;
+
+max-width:350px;
+
+}
+
+.social{
+
+width:100%;
+
+}
+
+}
